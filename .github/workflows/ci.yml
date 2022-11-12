@@ -1,8 +1,29 @@
 name: CI
+
+env:
+  node.version: 16.x
+
 on:
   pull_request:
 
 jobs:
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{env.node.version}}
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run affected:test -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
+
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -14,26 +35,11 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{env.node.version}}
           cache: 'npm'
 
-      - run: npm ci --prefer-offline
-      - run: npm run build
+      - uses: nrwl/nx-set-shas@v3
 
-  build-cache-check:
-    name: 'Build checking cache'
-    needs: [build]
-    runs-on: ubuntu-latest
+      - run: npm ci
+      - run: npm run affected:build -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'npm'
-
-      - run: npm ci --prefer-offline
-      - run: npm run build
