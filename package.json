@@ -12,7 +12,7 @@
     "build": "nx run-many --target=build --projects=nexelem,graphne",
     "affected:lint": "nx affected:lint",
     "affected:test": "nx affected:test --browsers=ChromeHeadless",
-    "affected:e2e": "nx affected:e2e",
+    "affected:e2e": "nx affected:e2e --parallel=1",
     "affected:build": "nx affected:build"
   },
   "private": true,

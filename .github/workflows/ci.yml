@@ -29,8 +29,8 @@ jobs:
       - run: npm ci
       - run: npm run affected:lint -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
-  test:
-    name: 'Affected: Test'
+  unit-tests:
+    name: 'Affected: Unit tests'
     runs-on: ubuntu-latest
 
     steps:
@@ -50,8 +50,8 @@ jobs:
       - run: npm ci
       - run: npm run affected:test -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
-  e2e:
-    name: 'Affected: E2E'
+  e2e-tests:
+    name: 'Affected: E2E tests'
     runs-on: ubuntu-latest
 
     steps:
