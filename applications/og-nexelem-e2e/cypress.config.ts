@@ -4,9 +4,9 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://dev.lemma.virtuslab.com/',
     specPattern: '**/*.feature',
     supportFile: 'src/support/e2e.ts',
+    chromeWebSecurity: false,
     async setupNodeEvents(on, config): Promise<Cypress.PluginConfigOptions> {
       await addCucumberPreprocessorPlugin(on, config);
 
