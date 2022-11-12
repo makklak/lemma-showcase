@@ -24,13 +24,13 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v3
         with:
-          base-branch: ${{ env.main-branch-name }}
+          main-branch-name: ${{env.main-branch-name}}
 
       - run: npm ci
       - run: npm run affected:lint -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
   test:
-    name: 'Test'
+    name: 'Affected: Test'
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +51,7 @@ jobs:
       - run: npm run affected:test -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
   build:
-    name: Build
+    name: 'Affected: Build'
     runs-on: ubuntu-latest
 
     steps:
@@ -70,4 +70,3 @@ jobs:
 
       - run: npm ci
       - run: npm run affected:build -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
-
