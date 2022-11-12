@@ -8,6 +8,27 @@ on:
   pull_request:
 
 jobs:
+  prettier:
+    name: 'Affected: Prettier',
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{env.node.version}}
+          cache: 'npm'
+
+      - uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: ${{env.main-branch-name}}
+
+      - run: npm ci
+      - run: npm run affected:format-check -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
+
   lint:
     name: 'Affected: Lint'
     runs-on: ubuntu-latest
