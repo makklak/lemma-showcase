@@ -27,7 +27,7 @@ jobs:
           base-branch: ${{ env.main-branch-name }}
 
       - run: npm ci
-      - run: npm run affected:lint -- --base=${{$BASE_SHA}} --head=${{$HEAD_SHA}}
+      - run: npm run affected:lint -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
   test:
     name: 'Test'
