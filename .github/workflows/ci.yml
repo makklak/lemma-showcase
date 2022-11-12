@@ -50,6 +50,27 @@ jobs:
       - run: npm ci
       - run: npm run affected:test -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
 
+  e2e:
+    name: 'Affected: E2E'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{env.node.version}}
+          cache: 'npm'
+
+      - uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: ${{env.main-branch-name}}
+
+      - run: npm ci
+      - run: npm run affected:e2e -- --base=${{env.NX_BASE}} --head=${{env.NX_HEAD}}
+
   build:
     name: 'Affected: Build'
     runs-on: ubuntu-latest
