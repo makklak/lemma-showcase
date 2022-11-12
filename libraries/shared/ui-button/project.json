@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "name": "shared-ui-button",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libraries/shared/ui-button/src",
   "prefix": "vl",
@@ -23,7 +23,5 @@
       }
     }
   },
-  "tags": [
-    "scope:shared", "type:ui"
-  ]
+  "tags": ["scope:shared", "type:ui"]
 }

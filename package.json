@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "og-nexelem:e2e": "cypress open --project=./applications/og-nexelem-e2e",
     "nexelem:serve": "nx serve nexelem --port 4200",
     "nexelem:e2e": "cypress open --project=./applications/nexelem-e2e",
     "graphne:serve": "nx serve graphne --port 4300",
@@ -23,6 +24,8 @@
     "@angular/cli": "~14.2.0",
     "@angular/compiler-cli": "~14.2.0",
     "@angular/language-service": "~14.2.0",
+    "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
+    "@cucumber/cucumber": "^8.7.0",
     "@nrwl/angular": "^15.0.13",
     "@nrwl/cli": "15.0.13",
     "@nrwl/cypress": "15.0.13",
