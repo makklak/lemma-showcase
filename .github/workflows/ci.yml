@@ -22,6 +22,7 @@ jobs:
 
   build-cache-check:
     name: 'Build checking cache'
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
