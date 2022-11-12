@@ -32,7 +32,7 @@
             "depConstraints": [
               {
                 "sourceTag": "type:application",
-                "onlyDependOnLibsWithTags": []
+                "onlyDependOnLibsWithTags": ["type:shell", "type:core", "type:feature", "type:ui"]
               },
               {
                 "sourceTag": "type:shell",

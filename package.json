@@ -2,7 +2,18 @@
   "name": "lemma-showcase",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nexelem:serve": "nx serve nexelem --port 4200",
+    "nexelem:e2e": "cypress open --project=./applications/nexelem-e2e",
+    "graphne:serve": "nx serve graphne --port 4300",
+    "graphne:e2e": "cypress open --project=./applications/graphne-e2e",
+    "build": "nx run-many --target=build --projects=nexelem,graphne",
+    "affected:format-check": "nx format:check",
+    "affected:lint": "nx affected:lint",
+    "affected:test": "nx affected:test --browsers=ChromeHeadless",
+    "affected:e2e": "nx affected:e2e --parallel=1",
+    "affected:build": "nx affected:build"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~14.2.0",
