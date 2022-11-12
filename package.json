@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "lint": "nx run-many --target=lint --projects=nexelem,graphne",
     "build": "nx run-many --target=build --projects=nexelem,graphne",
+    "affected:lint": "nx affected:lints",
     "affected:test": "nx affected:test --browsers=ChromeHeadless",
     "affected:build": "nx affected:build"
   },
