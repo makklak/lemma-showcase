@@ -9,7 +9,7 @@ on:
 
 jobs:
   prettier:
-    name: 'Affected: Prettier',
+    name: 'Affected: Prettier'
     runs-on: ubuntu-latest
 
     steps:
