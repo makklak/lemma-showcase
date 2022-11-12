@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "nexelem:serve": "nx serve nexelem --port 4200",
+    "nexelem:e2e": "cypress open --project=./applications/nexelem-e2e",
+    "graphne:serve": "nx serve graphne --port 4300",
+    "graphne:e2e": "cypress open --project=./applications/graphne-e2e",
+    "serve:graphne": "nx serve graphne",
     "lint": "nx run-many --target=lint --projects=nexelem,graphne",
     "build": "nx run-many --target=build --projects=nexelem,graphne",
     "affected:lint": "nx affected:lint",
