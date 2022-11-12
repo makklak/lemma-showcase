@@ -1,0 +1,29 @@
+{
+  "name": "graphne-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "applications/graphne-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "applications/graphne-e2e/cypress.config.ts",
+        "devServerTarget": "graphne:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "graphne:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["applications/graphne-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["graphne"]
+}
