@@ -15,7 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vl/shared/ui-button": ["libraries/shared/ui-button/src/index.ts"]
+      "@vl/shared/storybook": ["libraries/shared/storybook/src/index.ts"],
+      "@vl/shared/storybook-utils": [
+        "libraries/shared/storybook-utils/src/index.ts"
+      ],
+      "@vl/shared/ui-button": ["libraries/shared/ui-button/src/index.ts"],
+      "@vl/shared/ui-form-control": [
+        "libraries/shared/ui-form-control/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -45,6 +45,10 @@
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": []
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:storybook"]
               }
             ]
           }
