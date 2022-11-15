@@ -15,6 +15,28 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@vl/graphne/organization/feature": [
+        "libraries/graphne/organization/feature/src/index.ts"
+      ],
+      "@vl/graphne/organization/shell": [
+        "libraries/graphne/organization/shell/src/index.ts"
+      ],
+      "@vl/graphne/scheduling/feature": [
+        "libraries/graphne/scheduling/feature/src/index.ts"
+      ],
+      "@vl/graphne/scheduling/shell": [
+        "libraries/graphne/scheduling/shell/src/index.ts"
+      ],
+      "@vl/nexelem/production/dashboard-feature": [
+        "libraries/nexelem/production/dashboard-feature/src/index.ts"
+      ],
+      "@vl/nexelem/production/shell": [
+        "libraries/nexelem/production/shell/src/index.ts"
+      ],
+      "@vl/nexelem/sales/dashboard-feature": [
+        "libraries/nexelem/sales/dashboard-feature/src/index.ts"
+      ],
+      "@vl/nexelem/sales/shell": ["libraries/nexelem/sales/shell/src/index.ts"],
       "@vl/shared/storybook": ["libraries/shared/storybook/src/index.ts"],
       "@vl/shared/storybook-utils": [
         "libraries/shared/storybook-utils/src/index.ts"

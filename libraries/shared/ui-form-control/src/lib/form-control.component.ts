@@ -23,10 +23,10 @@ export class FormControlComponent implements ControlValueAccessor {
     return this.inputElementRef.nativeElement;
   }
 
-  onChangeCallback?: UnaryFunction<string> = () => {
+  onChangeCallback: UnaryFunction<string> = () => {
     return;
   };
-  onTouchCallback?: UnaryFunction<void> = () => {
+  onTouchCallback: UnaryFunction<void> = () => {
     return;
   };
 
