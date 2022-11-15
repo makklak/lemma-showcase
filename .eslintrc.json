@@ -31,20 +31,32 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "app:nexelem",
+                "onlyDependOnLibsWithTags": ["app:nexelem", "scope:shared"]
+              },
+                {
+                "sourceTag": "app:graphne",
+                "onlyDependOnLibsWithTags": ["app:graphne", "scope:shared"]
+              },
+              {
                 "sourceTag": "type:application",
                 "onlyDependOnLibsWithTags": ["type:shell", "type:core", "type:feature", "type:ui"]
               },
               {
                 "sourceTag": "type:shell",
-                "onlyDependOnLibsWithTags": []
+                "onlyDependOnLibsWithTags": ["type:feature"]
               },
               {
                 "sourceTag": "type:core",
-                "onlyDependOnLibsWithTags": []
+                "onlyDependOnLibsWithTags": ["type:utils"]
               },
               {
                 "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": []
+                "onlyDependOnLibsWithTags": ["type:ui", "type:utils"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:storybook"]
               }
             ]
           }

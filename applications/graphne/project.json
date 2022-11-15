@@ -91,5 +91,5 @@
       }
     }
   },
-  "tags": ["type:application"]
+  "tags": ["app:graphne", "type:application"]
 }

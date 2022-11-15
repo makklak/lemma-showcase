@@ -1,3 +1,6 @@
 <h1>{{ title }}</h1>
 
-<button vl-button>Sample button in {{ title }}</button>
+<button vl-button [routerLink]="['scheduling']">Go to scheduling</button>
+<button vl-button [routerLink]="['organization']">Go to organization</button>
+
+<router-outlet></router-outlet>

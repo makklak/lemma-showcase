@@ -1,3 +1,10 @@
 <h1>{{ title }}</h1>
 
-<button vl-button>Sample button in {{ title }}</button>
+<button vl-button [routerLink]="['sales']" data-cy="go-to-sales">
+  Go to sales
+</button>
+<button vl-button [routerLink]="['production']" data-cy="go-to-production">
+  Go to production
+</button>
+
+<router-outlet></router-outlet>
